@@ -9,10 +9,11 @@ namespace API.DTOs
   public class RegisterDto
   {
     [Required]
-    [StringLength(30, MinimumLength = 3, ErrorMessage = "Username must be between 3-30 characters")]
+    [StringLength(30, MinimumLength = 3)]
     public string Username { get; set; }
 
     [Required]
+    [StringLength(8, MinimumLength = 4)]
     public string Password { get; set; }
   }
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,6 +14,10 @@ import { MemberDetailComponent } from './componnents/members/member-detail/membe
 import { ListsComponent } from './componnents/lists/lists.component';
 import { ToastrModule } from 'ngx-toastr';
 import { MessagesComponent } from './componnents/messages/messages.component';
+import { TestErrorsComponent } from './componnents/errors/test-errors/test-errors.component';
+import { ServerErrorComponent } from './componnents/errors/server-error/server-error.component';
+import { NotFoundComponent } from './componnents/errors/not-found/not-found.component';
+import { ErrorInterceptor } from './_interceptors/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import { MessagesComponent } from './componnents/messages/messages.component';
     MembersListComponent,
     MemberDetailComponent,
     ListsComponent,
-    MessagesComponent
+    MessagesComponent,
+    TestErrorsComponent,
+    ServerErrorComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +44,9 @@ import { MessagesComponent } from './componnents/messages/messages.component';
       positionClass: 'toast-bottom-right'
     })
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
