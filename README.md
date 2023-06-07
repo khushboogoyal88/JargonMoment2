@@ -1,11 +1,7 @@
 # JargonMoment2
 
 
-Overview- A Tinder like app to connect the job hunters with the companies looking for talent. Second version fo Jargon Moment which was created using MERN tech stack.
-In this application- Angular, Dotnet ENtity Framework, SQL is used.
-
-
-JargonMoment2 is a web application built with [Angular](https://angular.io/) and [ASP.NET Core](https://dotnet.microsoft.com/apps/aspnet). It provides a platform for employers and emplyees to connect with each other and find potential matches.
+Overview- A Tinder like web application built with [Angular](https://angular.io/) and [ASP.NET Core](https://dotnet.microsoft.com/apps/aspnet) and MYSQL. It provides a platform for employers and emplyees to connect with each other and find potential matches for their reqiúirements.
 
 JargonMoment(original) was a School project with same idea but technology used was React with Redux, Node and Express and MongoDB.
 
