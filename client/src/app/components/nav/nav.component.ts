@@ -13,7 +13,7 @@ export class NavComponent implements OnInit {
   
   model: any = {};
   currentUserName: string = '';
-  isWhite: boolean = false;
+  isWhite: boolean = true;
 
   constructor(public accountService: AccountService, private router: Router, private toastr: ToastrService) { }
 
@@ -36,9 +36,7 @@ export class NavComponent implements OnInit {
 
 
   handleChange() {
-    this.switchTheme.emit(this.isWhite);
-    console.log(this.isWhite);
-  
+    this.switchTheme.emit(!this.isWhite);
   }
 
 }
