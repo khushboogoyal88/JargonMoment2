@@ -1,3 +1,4 @@
+import { MemberCardComponent } from './components/member-card/member-card.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
@@ -18,6 +19,9 @@ import { TestErrorComponent } from './errors/test-error/test-error.component';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import {JwtTokenInterceptor} from './interceptors/jwt-token.interceptor'
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 @NgModule({
   declarations: [
@@ -27,6 +31,7 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
     RegisterComponent,
     MemberListComponent,
     MemberDetailComponent,
+    MemberCardComponent,
     ListsComponent,
     MessagesComponent,
     TestErrorComponent,
@@ -40,12 +45,15 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
     FormsModule,
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
+    TabsModule.forRoot(),
     ToastrModule.forRoot({
       positionClass: "toast-bottom-right"
     }), // ToastrModule added
+    NgxGalleryModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtTokenInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

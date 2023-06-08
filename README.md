@@ -24,9 +24,9 @@ To run the JargonMoment2 locally on your machine, follow these steps:
 
    ```shell
    git clone https://github.com/khushboogoyal88/JargonMoment2.git
-Install the necessary dependencies for both the Angular frontend and ASP.NET Core backend. Navigate to the JargonMoment2.API and client directories and run the following command in each:
+- Install the necessary dependencies for both the Angular frontend and ASP.NET Core backend.  - Navigate to the JargonMoment2.API and client directories and run the following command in each:
 
-shell
+ ```shell
 Copy code
 npm install
 Start the backend server by running the following command in the JargonMoment2.API directory:

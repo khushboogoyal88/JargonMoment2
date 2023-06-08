@@ -8,10 +8,11 @@ import { BehaviorSubject} from 'rxjs'
   providedIn: 'root'
 })
 export class AccountService{
-  baseUrl = 'https://localhost:5001/api/';
+  private baseUrl = 'https://localhost:5001/api/';
+  private token: string | null = null;
   private currentUserSource = new BehaviorSubject<User | null>(null);
-  currentUser$ = this.currentUserSource.asObservable();
 
+  currentUser$ = this.currentUserSource.asObservable();
 
   constructor(private http: HttpClient) { }
 
