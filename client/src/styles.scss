@@ -1,0 +1,52 @@
+body{
+  padding-top: 30px;
+}
+
+  body .light-theme  {
+  padding-top: 1px;
+  color: #222 !important;
+  background-color: #FAF9F6;
+  height: 100vh;
+
+    .card {
+      background-color: #FAF9F6;
+    }
+
+    .bg-secondary {
+        background-color: #6543e0 !important;
+    }
+
+
+    .card-footer {
+        background-color: #FAF9F6 !important;
+    }
+
+
+
+    .nav-tabs .nav-link,
+    .nav-tabs .nav-link.active,
+    .nav-tabs .nav-link.active:focus,
+    .nav-tabs .nav-link.active:hover,
+    .nav-tabs .nav-item.open .nav-link,
+    .nav-tabs .nav-item.open .nav-link:focus,
+    .nav-tabs .nav-item.open .nav-link:hover,
+    .nav-pills .nav-link,
+    .nav-pills .nav-link.active,
+    .nav-pills .nav-link.active:focus,
+    .nav-pills .nav-link.active:hover,
+    .nav-pills .nav-item.open .nav-link,
+    .nav-pills .nav-item.open .nav-link:focus,
+    .nav-pills .nav-item.open .nav-link:hover {
+      color: #222222;
+    }
+
+    .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+        color: #fff !important;
+        background-color:  #6543e0 ;
+        border-color: #444 #444 transparent;
+    }
+
+    label{
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+}

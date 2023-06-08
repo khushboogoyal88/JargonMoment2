@@ -1,5 +1,5 @@
 import { AccountService } from './../../services/account.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -9,9 +9,11 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-
+  @Output() switchTheme = new EventEmitter();
+  
   model: any = {};
-  currentUserName: string = ''
+  currentUserName: string = '';
+  isWhite: boolean = false;
 
   constructor(public accountService: AccountService, private router: Router, private toastr: ToastrService) { }
 
@@ -19,7 +21,6 @@ export class NavComponent implements OnInit {
   
   }
 
- 
 
   login(){
     this.model.username = this.model.username.toLowerCase();
@@ -31,6 +32,13 @@ export class NavComponent implements OnInit {
   logOut(){
     this.accountService.logout();
     this.router.navigateByUrl('/');
+  }
+
+
+  handleChange() {
+    this.switchTheme.emit(this.isWhite);
+    console.log(this.isWhite);
+  
   }
 
 }

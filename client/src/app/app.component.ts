@@ -12,6 +12,8 @@ export class AppComponent implements OnInit{
 
   title: string = 'Jargon Moment 2';
   users: any;
+  isLightTheme: boolean = false;
+  
 
   constructor(private http: HttpClient, public accountService:AccountService){
      
@@ -19,6 +21,7 @@ export class AppComponent implements OnInit{
   
   ngOnInit(): void {
     this.setCurrentUser()
+    console.log(this.isLightTheme)
   }
 
   getUsers(){
@@ -33,4 +36,9 @@ export class AppComponent implements OnInit{
     const user: User = JSON.parse(localStorage.getItem('user')!);
     this.accountService.setCurrentUser(user);
   }
+
+  switchTheme($event: boolean) {
+    this.isLightTheme = $event;
+  }
+
 }
