@@ -16,10 +16,18 @@ export class MembersService {
    }
 
   getMembers():Observable<Member[]> {
-    return this.http.get<Member[]>(this.baseUrl + 'users');
+    if (this.members.length > 0) return of(this.members);
+    return this.http.get<Member[]>(this.baseUrl + 'users').pipe(
+      map(members => {
+        this.members = members;
+        return members;
+      })
+    )
   }
 
   getMember(username: string):Observable<Member> {
+    const member = this.members.find(x => x.userName === username);
+    if (member) return of(member);
     return this.http.get<Member>(this.baseUrl + 'users/' + username);
   }
 

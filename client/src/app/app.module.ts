@@ -23,6 +23,8 @@ import {JwtTokenInterceptor} from './interceptors/jwt-token.interceptor'
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { MemberEditComponent } from './components/member-edit/member-edit.component';
+import {NgxSpinnerModule} from 'ngx-spinner'
+import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -51,11 +53,15 @@ import { MemberEditComponent } from './components/member-edit/member-edit.compon
     ToastrModule.forRoot({
       positionClass: "toast-bottom-right"
     }), // ToastrModule added
-    NgxGalleryModule
+    NgxGalleryModule,
+    NgxSpinnerModule.forRoot({
+      type: 'pacman'
+    })
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: JwtTokenInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: JwtTokenInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })
