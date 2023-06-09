@@ -1,3 +1,4 @@
+import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.guard';
 import { TestErrorComponent } from './errors/test-error/test-error.component';
 import { AuthGuard } from './guards/auth.guard';
 import { MessagesComponent } from './components/messages/messages.component';
@@ -9,6 +10,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { MemberEditComponent } from './components/member-edit/member-edit.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -20,6 +22,7 @@ const routes: Routes = [
       { path: 'errors', component: TestErrorComponent },
       { path: 'members', component: MemberListComponent },
       { path: 'members/:username', component: MemberDetailComponent, },
+      { path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       { path: 'lists', component: ListsComponent },
       { path: 'messages', component: MessagesComponent },
     ]
