@@ -25,6 +25,9 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { MemberEditComponent } from './components/member-edit/member-edit.component';
 import {NgxSpinnerModule} from 'ngx-spinner'
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
+import { PhotoEditorComponent } from './components/photo-editor/photo-editor.component';
+import { FileUploadModule } from 'ng2-file-upload'
+
 
 @NgModule({
   declarations: [
@@ -40,7 +43,8 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
     TestErrorComponent,
     NotFoundComponent,
     ServerErrorComponent,
-    MemberEditComponent
+    MemberEditComponent,
+    PhotoEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +58,7 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
       positionClass: "toast-bottom-right"
     }), // ToastrModule added
     NgxGalleryModule,
+    FileUploadModule,
     NgxSpinnerModule.forRoot({
       type: 'pacman'
     })
