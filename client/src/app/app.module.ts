@@ -5,7 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
@@ -26,7 +26,10 @@ import { MemberEditComponent } from './components/member-edit/member-edit.compon
 import {NgxSpinnerModule} from 'ngx-spinner'
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { PhotoEditorComponent } from './components/photo-editor/photo-editor.component';
-import { FileUploadModule } from 'ng2-file-upload'
+import { FileUploadModule } from 'ng2-file-upload';
+import { TextInputComponent } from './components/forms/text-input/text-input.component';
+import { DatePickerComponent } from './components/forms/date-picker/date-picker.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 @NgModule({
@@ -44,13 +47,16 @@ import { FileUploadModule } from 'ng2-file-upload'
     NotFoundComponent,
     ServerErrorComponent,
     MemberEditComponent,
-    PhotoEditorComponent
+    PhotoEditorComponent,
+    TextInputComponent,
+    DatePickerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
@@ -59,6 +65,7 @@ import { FileUploadModule } from 'ng2-file-upload'
     }), // ToastrModule added
     NgxGalleryModule,
     FileUploadModule,
+    BsDatepickerModule.forRoot(),
     NgxSpinnerModule.forRoot({
       type: 'pacman'
     })
