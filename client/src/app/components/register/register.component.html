@@ -3,13 +3,14 @@
     <hr>
 
   
-        <label style="margin-right:10px">I am a: </label>
-        <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="male" formControlName="gender"> Male
-        </label>
-        <label class="form-check-label">
-            <input type="radio" class="form-check-input ms-3" value="female" formControlName="gender"> Female
-        </label>
+        <label style="margin-right:10px" class="text-body">I am a: </label>
+        <label class="form-check-label" class="text-body ml-4"></label>
+            <input type="radio" class="form-check-input text-body" value="company" formControlName="bio" > Company
+        
+        <label class="form-check-label" class="text-body ml-5">    
+             </label>
+            <input type="radio" class="form-check-input text-body" value="candidate" formControlName="bio"> candidate
+       
 
     <app-text-input [formControl]="$any(registerForm.controls['username'])" 
         [label]="'Username'"></app-text-input>

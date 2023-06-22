@@ -16,7 +16,7 @@ namespace API.Data.Migrations
                 newName: "Skills");
 
             migrationBuilder.RenameColumn(
-                name: "Gender",
+                name: "Bio",
                 table: "Users",
                 newName: "Bio");
         }
@@ -32,7 +32,7 @@ namespace API.Data.Migrations
             migrationBuilder.RenameColumn(
                 name: "Bio",
                 table: "Users",
-                newName: "Gender");
+                newName: "Bio");
         }
     }
 }

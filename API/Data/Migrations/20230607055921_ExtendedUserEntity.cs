@@ -38,7 +38,7 @@ namespace API.Data.Migrations
                 defaultValue: new DateOnly(1, 1, 1));
 
             migrationBuilder.AddColumn<string>(
-                name: "Gender",
+                name: "Bio",
                 table: "Users",
                 type: "TEXT",
                 nullable: true);
@@ -125,7 +125,7 @@ namespace API.Data.Migrations
                 table: "Users");
 
             migrationBuilder.DropColumn(
-                name: "Gender",
+                name: "Bio",
                 table: "Users");
 
             migrationBuilder.DropColumn(
